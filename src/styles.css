@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+:root{
+  --button-color: #ffdd00;
+  --background-color: #f4f6f9;
+  --background-forms: #fff;
+  --color-fonts:#4a4a4a;
+  --color-fonts-secondary: #0f265c;
+  --color-alert: red;
+}
+
+body{
+  background-color: var(--background-color);
+  color: var(--color-fonts);
+}
+.flex{
+  display: flex;
+}
+.justify-between{
+  justify-content: space-between;
+}
+.hidden{
+  display: none;
+}
+.text-center{
+  text-align: center;
+}
+.m-b{
+  margin-bottom: 10px;
+}

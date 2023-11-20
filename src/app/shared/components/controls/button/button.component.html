@@ -1,0 +1,6 @@
+<ng-container *ngIf="type == 'submit'; else templateButton">
+  <input class="button" [disabled]="disabled" type="submit" [value]="text" />
+</ng-container>
+<ng-container *ngIf="type == 'button'">
+  <button class="button" [disabled]="disabled" (click)="click()" type="button">{{text}}</button>
+</ng-container>

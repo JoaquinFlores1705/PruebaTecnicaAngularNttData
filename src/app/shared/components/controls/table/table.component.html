@@ -1,0 +1,42 @@
+<table class="table">
+  <thead>
+      <tr class="table__header">
+          <th *ngFor="let column of columnsHeader">
+            {{column}}
+          </th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let [key, value] of rowValuesMap">
+          <td>
+              <img *ngIf="key == 'img'" [src]=value width="32" height="32" alt="Logo">
+              <ng-container >
+                {{value}}
+              </ng-container>
+          </td>
+          <td class="actions">
+              <div class="action">
+                  <svg (click)="moreOptions(product.id)" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" />
+                  </svg>
+                  <div class="action__form hidden action-id-{{product.id}}">
+                      <p (click)="Edit(product.id)">Editar</p>
+                      <p (click)="Delete(product.id)">Eliminar</p>
+                  </div>
+              </div>
+          </td>
+      </tr>
+  </tbody>
+</table>
+<div class="flex justify-between">
+  <p>
+      {{products.length}} Resultados
+  </p>
+  <p>
+      <select class="select" [(ngModel)]="select" (change)="ChangeResults(select)">
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="15">15</option>
+      </select>
+  </p>
+</div>

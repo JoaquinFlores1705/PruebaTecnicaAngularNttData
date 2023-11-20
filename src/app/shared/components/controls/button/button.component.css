@@ -1,0 +1,20 @@
+.button{
+  padding: 10px;
+  cursor: pointer;
+  color: var(--color-fonts-secondary);
+  font-weight: bold;
+}
+
+input.button{
+  background-color: var(--button-color);
+  opacity: 70%;
+}
+
+input.button{
+  background-color: var(--button-color);
+  opacity: 70%;
+}
+
+input.button:disabled{
+  opacity: 50%;
+}

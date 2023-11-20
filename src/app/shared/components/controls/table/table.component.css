@@ -1,0 +1,37 @@
+.table{
+  border-collapse: collapse;
+  border-bottom: 3px solid var(--background-color);
+  width: 100%;
+}
+.table tr{
+  border-bottom: 3px solid var(--background-color);
+}
+.table__header{
+  background-color: var(--background-color);
+}
+.actions{
+  width: 30px;
+  cursor: pointer;
+}
+.select{
+  width: 60px;
+}
+.action{
+  position: relative;
+}
+.action__form{
+  position: absolute;
+  background-color: var(--background-forms);
+  width: 80px;
+  top: 0;
+  right: 20px;
+}
+
+.action__form p{
+  margin: 0;
+  padding: 0.5em;
+}
+
+.action__form p:hover{
+  background-color: var(--button-color);
+}
