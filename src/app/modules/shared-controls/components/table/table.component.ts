@@ -8,7 +8,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class TableComponent {
   select: number = 5;
   @Input() columnsHeader:string[] = [];
-  @Input() rowValuesMap: Map<string, any> = new Map<string, any>();
+  @Input() rowValuesMap: Map<string, any>[] = [];
   @Output() edit = new EventEmitter<string>();
   @Output() delete = new EventEmitter<string>();
   @Output() changeResults = new EventEmitter<Number>();

@@ -1,0 +1,17 @@
+.register{
+  background-color: var(--background-forms);
+}
+.register h1{
+  padding: 20px;
+}
+.form{
+  border-top: 2px solid var(--background-color);
+  padding: 10px;
+}
+.error{
+  background-color: #dc3545;
+  color: white;
+  border-radius: 5px;
+  padding: 1px;
+  margin-bottom: 5px;
+}

@@ -13,7 +13,7 @@ export class ButtonComponent {
   @Output() clickButton = new EventEmitter();
 
 
-  sendForm(){
+  click(){
     this.clickButton.emit();
   }
 

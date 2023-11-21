@@ -1,0 +1,25 @@
+<div class="flex justify-between m-b">
+  <app-search
+    [searchText]="searchText"
+    (search)="ChangeResults($event)"
+  ></app-search>
+  <button class="btn-add">
+      <a [routerLink]="['/registro/agregar']">
+          Agregar
+      </a>
+  </button>
+</div>
+<div class="error" *ngIf="error != ''">
+  <p>{{error}}</p>
+</div>
+<div class="table">
+  <app-table
+    [columnsHeader]="columnsHeader"
+    [rowValuesMap]="rowValuesMap"
+    (edit)="EditProduct($event)"
+    (delete)="DeleteProduct($event)"
+    (changeResults)="ChangeNumberResults($event)"
+    >
+
+  </app-table>
+</div>

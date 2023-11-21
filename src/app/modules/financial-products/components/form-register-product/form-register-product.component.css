@@ -1,0 +1,11 @@
+.form{
+  flex-wrap: wrap;
+}
+.form .form-input{
+  flex-basis: calc(50% - 25px);
+  padding: 10px;
+}
+.buttons{
+  flex-basis: 100%;
+  justify-content: space-around;
+}

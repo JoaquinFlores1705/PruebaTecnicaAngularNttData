@@ -25,6 +25,7 @@ export class FinancialProductsService implements crudI, verifyI {
 
 
   get() : Observable<FinancialProduct[]> {
+    console.log('aqui')
     return this.http.get<FinancialProduct[]>(`${this.url}/bp/products`, {headers: this.headers});
   }
 

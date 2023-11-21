@@ -1,0 +1,9 @@
+<div class="register">
+  <h1 class="text-center">Formulario de registro</h1>
+  <div class="error" *ngIf="error != ''">
+      <p>{{error}}</p>
+  </div>
+  <div class="form">
+      <app-form-register-product #registerProduct (registerProductEvent)="update ? updateProduct($event) :addProduct($event)" [product]="product"></app-form-register-product>
+  </div>
+</div>

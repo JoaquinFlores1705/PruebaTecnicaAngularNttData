@@ -1,0 +1,77 @@
+<form [formGroup]="registerForm" class="form flex" (submit)="sendForm()">
+  <app-form-input
+    idHtml="id"
+    nameHtml="ID"
+    ngClass="form-input"
+    class="{{this.registerForm.get('id')?.invalid && (this.registerForm.get('id')?.dirty || this.registerForm.get('id')?.touched) ? 'alert-danger': ''}}"
+    formControlName="id"
+    [control]="id"
+    [error]="this.registerForm.get('id')?.errors"
+    [readonly]="update"
+    >
+  </app-form-input>
+  <app-form-input
+    idHtml="name"
+    nameHtml="Nombre"
+    ngClass="form-input"
+    class="{{this.registerForm.get('name')?.invalid && (this.registerForm.get('name')?.dirty || this.registerForm.get('name')?.touched) ? 'alert-danger': ''}}"
+    formControlName="name"
+    [control]="name"
+    [error]="this.registerForm.get('name')?.errors"
+    >
+  </app-form-input>
+  <app-form-input
+    idHtml="description"
+    nameHtml="Descripcion"
+    ngClass="form-input"
+    class="{{this.registerForm.get('description')?.invalid && (this.registerForm.get('description')?.dirty || this.registerForm.get('description')?.touched) ? 'alert-danger': ''}}"
+    formControlName="description"
+    [control]="description"
+    [error]="this.registerForm.get('description')?.errors"
+    >
+  </app-form-input>
+  <app-form-input
+    idHtml="logo"
+    nameHtml="Logo"
+    ngClass="form-input"
+    class="{{this.registerForm.get('logo')?.invalid && (this.registerForm.get('logo')?.dirty || this.registerForm.get('logo')?.touched) ? 'alert-danger': ''}}"
+    formControlName="logo"
+    [control]="logo"
+    [error]="this.registerForm.get('logo')?.errors"
+    >
+  </app-form-input>
+  <app-form-input
+    idHtml="date_release"
+    nameHtml="FechaLiberacion"
+    type="date"
+    ngClass="form-input"
+    class="{{this.registerForm.get('date_release')?.invalid && (this.registerForm.get('date_release')?.dirty || this.registerForm.get('date_release')?.touched) ? 'alert-danger': ''}}"
+    formControlName="date_release"
+    [control]="date_release"
+    [error]="this.registerForm.get('date_release')?.errors"
+    >
+  </app-form-input>
+  <app-form-input
+    idHtml="date_revision"
+    nameHtml="Fecha Revision"
+    type="date"
+    ngClass="form-input"
+    class="{{this.registerForm.get('date_revision')?.invalid && (this.registerForm.get('date_revision')?.dirty || this.registerForm.get('date_revision')?.touched) ? 'alert-danger': ''}}"
+    formControlName="date_revision"
+    [control]="date_revision"
+    [error]="this.registerForm.get('date_revision')?.errors"
+    >
+  </app-form-input>
+  <div class="buttons flex">
+    <app-button
+      type="button"
+      text="Reiniciar"
+      (clickButton)="reset()"
+    >
+    </app-button>
+    <app-button
+      [disabled]="registerForm.invalid"
+    >
+    </app-button>
+  </div>
+</form>
