@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ColumnInterface } from 'src/app/shared/models/column-interface';
 
 @Component({
   selector: 'app-table',
@@ -8,10 +9,14 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class TableComponent {
   select: number = 5;
   @Input() columnsHeader:string[] = [];
-  @Input() rowValuesMap: Map<string, any>[] = [];
+  @Input() rowValuesMap: ColumnInterface[][] = [];
   @Output() edit = new EventEmitter<string>();
   @Output() delete = new EventEmitter<string>();
   @Output() changeResults = new EventEmitter<Number>();
+
+  ngOnInit(){
+
+  }
 
   moreOptions(id:string){
     let elementsMore = document.querySelectorAll("[class^='action-id-']")

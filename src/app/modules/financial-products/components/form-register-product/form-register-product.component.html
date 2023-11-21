@@ -58,6 +58,7 @@
     ngClass="form-input"
     class="{{this.registerForm.get('date_revision')?.invalid && (this.registerForm.get('date_revision')?.dirty || this.registerForm.get('date_revision')?.touched) ? 'alert-danger': ''}}"
     formControlName="date_revision"
+    [readonly]="true"
     [control]="date_revision"
     [error]="this.registerForm.get('date_revision')?.errors"
     >
