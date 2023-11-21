@@ -3,8 +3,8 @@
     [searchText]="searchText"
     (search)="ChangeResults($event)"
   ></app-search>
-  <button class="btn-add">
-      <a [routerLink]="['/registro/agregar']">
+  <button >
+      <a class="btn-add" [routerLink]="['/registro/agregar']">
           Agregar
       </a>
   </button>
@@ -17,9 +17,12 @@
     [columnsHeader]="columnsHeader"
     [rowValuesMap]="rowValuesMap"
     (edit)="EditProduct($event)"
-    (delete)="DeleteProduct($event)"
+    (delete)="ShowModalDelete($event)"
     (changeResults)="ChangeNumberResults($event)"
     >
 
   </app-table>
 </div>
+<ng-container *ngIf="modalShow">
+  <app-modal-confirmation [id]="idDelete" (result)="DeleteProduct($event)"></app-modal-confirmation>
+</ng-container>

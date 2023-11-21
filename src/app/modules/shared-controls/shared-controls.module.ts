@@ -5,14 +5,14 @@ import { FormInputComponent } from './components/form-input/form-input.component
 import { SearchComponent } from './components/search/search.component';
 import { TableComponent } from './components/table/table.component';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
-
-
+import { ModalConfirmationComponent } from './components/modal-confirmation/modal-confirmation.component';
 @NgModule({
   declarations: [
     ButtonComponent,
     FormInputComponent,
     SearchComponent,
-    TableComponent
+    TableComponent,
+    ModalConfirmationComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +23,8 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
     ButtonComponent,
     FormInputComponent,
     SearchComponent,
-    TableComponent
+    TableComponent,
+    ModalConfirmationComponent
   ]
 })
 export class SharedControlsModule { }

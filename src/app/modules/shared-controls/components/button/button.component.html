@@ -2,5 +2,5 @@
   <input class="button" [disabled]="disabled" type="submit" [value]="text" />
 </ng-container>
 <ng-container *ngIf="type == 'button'">
-  <button class="button" [disabled]="disabled" (click)="click()" type="button">{{text}}</button>
+  <button class="button {{classAdd}}" [disabled]="disabled" (click)="click()" type="button">{{text}}</button>
 </ng-container>

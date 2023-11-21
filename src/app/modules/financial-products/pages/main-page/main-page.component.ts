@@ -4,6 +4,7 @@ import { FinancialProduct } from 'src/app/shared/models/financial-product-model'
 import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
 import { ColumnInterface } from 'src/app/shared/models/column-interface';
+import { ModalConfirmationComponent } from 'src/app/modules/shared-controls/components/modal-confirmation/modal-confirmation.component';
 
 @Component({
   selector: 'app-main-page',
@@ -17,8 +18,12 @@ export class MainPageComponent {
   products:FinancialProduct[] = [];
   searchText: string = "";
   error: string = "";
+  idDelete: string = "";
+  modalShow: boolean = false;
 
-  constructor(private financialService: FinancialProductsService, private router: Router){
+  constructor(private financialService: FinancialProductsService,
+    private router: Router,
+    ){
 
   }
 
@@ -91,11 +96,21 @@ export class MainPageComponent {
     this.router.navigate(['/registro/edicion', id]);
   }
 
+  ShowModalDelete(id:string){
+    this.idDelete = id;
+    this.modalShow = true;
+  }
+
   DeleteProduct(id:string){
+    this.modalShow = false;
+
+    if(id == "") return;
+
     this.financialService.delete(id).subscribe({
       next: this.responseDeleteSucessfull.bind(this),
       error: this.responseDeleteError.bind(this)
     });
+
   }
 
   responseDeleteSucessfull(data: string){
@@ -105,7 +120,6 @@ export class MainPageComponent {
   responseDeleteError(data:HttpErrorResponse){
     this.error = "";
     this.error = data.error.text;
-    console.log(data);
     this.LoadProducts();
   }
 

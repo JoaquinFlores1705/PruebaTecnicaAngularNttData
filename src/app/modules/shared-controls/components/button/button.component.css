@@ -10,11 +10,10 @@ input.button{
   opacity: 70%;
 }
 
-input.button{
-  background-color: var(--button-color);
-  opacity: 70%;
-}
-
 input.button:disabled{
   opacity: 50%;
+}
+
+.color-primary{
+  background-color: var(--button-color);
 }

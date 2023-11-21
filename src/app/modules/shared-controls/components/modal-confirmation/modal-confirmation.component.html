@@ -1,0 +1,25 @@
+<div class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+        Estas seguro de eliminar el producto: {{id}}?
+    </div>
+    <div class="modal-footer">
+      <div class="buttons">
+        <app-button
+          type="button"
+          text="Cancelar"
+          (clickButton)="cancel()"
+        >
+        </app-button>
+        <app-button
+          type="button"
+          text="Confirmar"
+          (clickButton)="confirm()"
+          classAdd="color-primary"
+        >
+        </app-button>
+      </div>
+    </div>
+  </div>
+</div>
+

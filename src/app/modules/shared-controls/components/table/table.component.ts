@@ -18,15 +18,17 @@ export class TableComponent {
 
   }
 
-  moreOptions(id:string){
+  clearSubMenus(id:string = ""){
     let elementsMore = document.querySelectorAll("[class^='action-id-']")
-    console.log(elementsMore)
     elementsMore.forEach((e) => {
-      if(!e.classList.contains(`action-id-${id}`))
+      if(!e.classList.contains(`action-id-${id}`) || id == "")
         e.classList.add("hidden")
     })
+  }
+
+  moreOptions(id:string){
+    this.clearSubMenus(id);
     let elementMore = document.querySelector(`.action-id-${id}`)
-    console.log(elementMore)
     if(elementMore!.classList.contains("hidden"))
       elementMore!.classList.remove('hidden')
     else
@@ -38,6 +40,7 @@ export class TableComponent {
   }
 
   Delete(id:string){
+    this.clearSubMenus();
     this.delete.emit(id);
   }
 
