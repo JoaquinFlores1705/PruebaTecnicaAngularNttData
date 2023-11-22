@@ -2,3 +2,10 @@
   background-color: var(--background-forms);
   padding: 20px;
 }
+.error{
+  background-color: #dc3545;
+  color: white;
+  border-radius: 5px;
+  padding: 1px;
+  margin-bottom: 5px;
+}
